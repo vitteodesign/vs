@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>vitteo.space – Digital Artworks</title>         
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+                var body = document.body,
+        overlay = document.querySelector('.overlay'),
+        overlayBtts = document.querySelectorAll('button[class$="overlay"]'),
+        openingBtt;
+        
+    [].forEach.call(overlayBtts, function(btt) {
+
+      btt.addEventListener('click', function() { 
+         
+         /* Detect the button class name */
+         var overlayOpen = this.className === 'open-overlay';
+         
+         /* storing a reference to the opening button */
+         if (overlayOpen) {
+            openingBtt = this;
+         }
+         
+         /* Toggle the aria-hidden state on the overlay and the 
+            no-scroll class on the body */
+         overlay.setAttribute('aria-hidden', !overlayOpen);
+         body.classList.toggle('noscroll', overlayOpen);
+         
+         /* On some mobile browser when the overlay was previously
+            opened and scrolled, if you open it again it doesn't 
+            reset its scrollTop property */
+         overlay.scrollTop = 0;
+         
+          /* forcing focus for Assistive technologies but note:
+        - if your modal has just a phrase and a button move the
+          focus on the button
+        - if your modal has a long text inside (e.g. a privacy
+          statement) move the focus on the first heading inside 
+          the modal
+        - otherwise just focus the modal.
+
+        When you close the overlay restore the focus on the 
+        button that opened the modal.
+      */
+      if (overlayOpen) {
+         overlay.focus();
+      }
+      else {
+         openingBtt.focus();
+         openingBtt = null;
+      }
+
+      }, false);
+
+    });
+
+
+    document.body.addEventListener('keyup', (ev) => {
+       if (ev.key === "Escape" && 
+           overlay.getAttribute('aria-hidden') === 'false') {
+          overlay.setAttribute('aria-hidden', 'true');
+          body.classList.toggle('noscroll', false);
+          openingBtt.focus();
+          openingBtt = null;
+       }
+    })
+        </script>
+        <script>/* Interactions, do not remove */ (function(){try{if(!document.documentElement.hasAttribute('data-pg-ia-disabled')) { window.pgia_small_mq=typeof pgia_small_mq=='string'?pgia_small_mq:'(max-width:767px)';window.pgia_large_mq=typeof pgia_large_mq=='string'?pgia_large_mq:'(min-width:768px)';var style = document.createElement('style');var pgcss='html:not(.pg-ia-no-preview) [data-pg-ia-hide=""] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show=""] {opacity:1;visibility:visible;display:block;}';if(document.documentElement.hasAttribute('data-pg-id') && document.documentElement.hasAttribute('data-pg-mobile')) {pgia_small_mq='(min-width:0)';pgia_large_mq='(min-width:99999px)'} pgcss+='@media ' + pgia_small_mq + '{ html:not(.pg-ia-no-preview) [data-pg-ia-hide="mobile"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="mobile"] {opacity:1;visibility:visible;display:block;}}';pgcss+='@media ' + pgia_large_mq + '{html:not(.pg-ia-no-preview) [data-pg-ia-hide="desktop"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="desktop"] {opacity:1;visibility:visible;display:block;}}';style.innerHTML=pgcss;document.querySelector('head').appendChild(style);}}catch(e){console&&console.log(e);}})()</script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>     
+    <body style="background-color: #000000; color: #ffffff; margin-top: 3%; margin-left: 5%;"> 
+        <div style="position: fixed;">
+            <h1 style="font-family: 'Quicksand', sans-serif; font-size: 73px;">vitteo.space</h1>
+            <ul>
+                <li><a href="https://objkt.com/profile/vitteo/created" class="links">objkt</a>
+                </li>
+                <li><a href="https://foundation.app/@vitteo" class="links">foundation</a>
+                </li>
+                <li><a href="https://twitter.com/vitteospace" class="links">twitter</a>
+                </li>
+            </ul>
+        </div>
+        <img style="position: absolute; z-index: -1; width: 340px;" data-pg-ia='{"l":[{"name":"circle","trg":"now","a":{"l":[{"t":"","l":[{"t":"set","p":0,"d":0,"l":{"x":145,"y":230,"rotationZ":0}},{"t":"tween","p":0,"d":1.96,"l":{"rotationZ":50,"x":229,"y":322}},{"t":"tween","p":1.96,"d":0.64,"l":{"rotationZ":469,"x":100,"y":100}},{"t":"tween","p":2.5949999999999998,"d":1.8,"l":{"rotationZ":0,"x":145,"y":230}}]}]},"rpt":"100","d":"20"}]}' src="imgs/b.png"/>
+        <img style="position: absolute; z-index: -1; width: 374px;" data-pg-ia='{"l":[{"name":"circle","trg":"now","a":{"l":[{"t":"","l":[{"t":"set","p":0,"d":0,"l":{"x":300,"y":100,"rotationZ":0}},{"t":"tween","p":0,"d":1.96,"l":{"x":265,"y":257,"rotationZ":324}},{"t":"tween","p":1.96,"d":0.66,"l":{"x":130,"y":2,"rotationZ":318}},{"t":"tween","p":2.5949999999999998,"d":1.91,"l":{"x":300,"y":100,"rotationZ":0}}]}]},"rpt":"100","d":"20"}]}' src="imgs/g.png"/>
+        <img src="imgs/p.png" style="position: absolute; z-index: -1; width: 400px;" data-pg-ia='{"l":[{"name":"circle","trg":"now","a":{"l":[{"t":"","l":[{"t":"set","p":0,"d":0,"l":{"x":150,"y":150,"rotationZ":0}},{"t":"tween","p":0,"d":1.05,"l":{"x":"100%","y":"100%","rotationZ":87}},{"t":"tween","p":1.05,"d":0.82,"l":{"x":130,"y":281,"rotationZ":318}},{"t":"tween","p":1.88,"d":1.13,"l":{"x":24,"y":-80,"rotationZ":66}},{"t":"tween","p":3,"d":1.5,"l":{"x":150,"y":150,"rotationZ":0}}]}]},"rpt":"100","d":"20"}]}'/>
+        <script src="pgia/lib/pgia.js"></script>
+    </body>     
+</html>
